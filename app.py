@@ -1,13 +1,13 @@
-import sklearn
 from flask import Flask, render_template, request
 from model import load, prediksi
+import sklearn
 
 app = Flask(__name__)
 
-# load model dan scale
+# load model dan scaler
 load()
 
-@app.route('/home')
+@app.route('/')
 def home():
     return render_template('index.html')
 
